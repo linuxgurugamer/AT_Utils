@@ -13,7 +13,7 @@ namespace AT_Utils
     [KSPAddon(KSPAddon.Startup.AllGameScenes, false)]
     public class TooltipManager : MonoBehaviour
     {
-        static readonly TooltipWindow tooltipWindow = new TooltipWindow();
+        static TooltipWindow tooltipWindow;
 
         static string tooltip = "";
         static int max_width = Math.Max(Screen.width/6, 200);
@@ -89,6 +89,7 @@ namespace AT_Utils
 
         void Awake()
         {
+            tooltipWindow = new TooltipWindow();
             tooltipWindow.Show(this);
         }
 
